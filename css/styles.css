@@ -261,11 +261,13 @@ body {
   display: flex;
 }
 .header .header__icon .header-icon__list {
+  background-color: #ffffff;
   left: 0;
   overflow: hidden;
   position: absolute;
-  top: 40px;
+  top: 30px;
   width: 100%;
+  z-index: 1;
   align-content: initial;
   align-items: flex-start;
   display: flex;
@@ -276,7 +278,7 @@ body {
   color: #3c9da7;
   font-family: "Montserrat-Bold", sans-serif;
   letter-spacing: 0.1rem;
-  padding: 0.4rem 0;
+  padding: 0.3rem 0;
   position: relative;
   text-transform: lowercase;
 }
@@ -794,6 +796,9 @@ body {
   padding: 1rem 0.5rem 0.1rem;
   width: 50%;
 }
+.main .main__contact .contact__form .contact-form__input [type=text]:focus {
+  background-color: #f7ffff;
+}
 @media screen and (max-width: 930px) {
   .main .main__contact .contact__form .contact-form__input [type=text] {
     width: 100%;
@@ -817,6 +822,9 @@ body {
   padding: 1rem 0.5rem 0.1rem;
   width: 50%;
 }
+.main .main__contact .contact__form .contact-form__textarea textarea:focus {
+  background-color: #f7ffff;
+}
 @media screen and (max-width: 930px) {
   .main .main__contact .contact__form .contact-form__textarea textarea {
     width: 100%;
@@ -837,6 +845,7 @@ body {
   transition: all 0.4s ease;
 }
 .main .main__contact .contact__form .contact-form__submit [type=submit]:hover {
+  background-color: #f7ffff;
   transform: scale(1.1);
 }
 
