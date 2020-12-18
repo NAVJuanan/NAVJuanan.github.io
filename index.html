@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Meta-tags -->
+    <title>BC Juanan - Portfolio</title>
+
+    <!-- Links Css, FontAwesome & Favicon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- fancyBox plugin -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+
+    <!-- Scripts JQuery -->
+    <!-- <script defer src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
+    <script defer src="js/jquery-3.5.1.min.js"></script>
+
+    <!-- fancyBox plugin -->
+    <script defer src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+    <script defer src="js/app.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__container">
+            <h1 class="header__title"><a href="#" title="BC Juanan">BC Juanan</a></h1>
+
+            <!-- Navegación -->
+            <nav class="header__nav">
+                <ul class="header__list">
+                    <li class="header__item"><a href="#bioId" title="bio">bio</a></li>
+                    <li class="header__item"><a href="#careerId" title="career">experiencia</a></li>
+                    <li class="header__item"><a href="#travelId" title="travels">viajes</a></li>
+                    <li class="header__item"><a href="#contactId" title="contact">contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Menú móvil -->
+        <div class="header__icon">
+            <div class="header-icon__bars fas fa-bars">
+                <nav class="header-icon__nav">
+                    <ul class="header-icon__list">
+                        <li class="header-icon__item"><a href="#bioId" title="bio">bio</a></li>
+                        <li class="header-icon__item"><a href="#careerId" title="career">experiencia</a></li>
+                        <li class="header-icon__item"><a href="#travelId" title="travels">viajes</a></li>
+                        <li class="header-icon__item"><a href="#contactId" title="contact">contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <h1 class="header-icon__title"><a href="#" title="BC Juanan">BC Juanan</a></h1>
+        </div>
+    </header>
+
+    <main class="main">
+
+        <!-- Bio -->
+        <div class="main__bio" id="bioId">
+
+            <!-- presentación -->
+            <h2 class="bio__title">Soy Juanan:</h2>
+            <h2 class="bio__subtitle">a Business Central developer</h2>
+
+            <!-- rrss -->
+            <div class="bio__rrss">
+                <ul class="bio-rrss__list">
+                    <li class="bio-rrss__item">
+                        <a href="https://github.com/NAVJuanan/Trazos/tree/main/Ejercicios/Portfolio" title="github" target="_blank" rel="noopener noreferrer">
+                            <div class="fab fa-github-alt"></div>
+                        </a>
+                    </li>
+                    <li class="bio-rrss__item">
+                        <a href="https://www.linkedin.com/in/juan-antonio-mu%C3%B1oz-valledor-7016925a/" title="linkedin" target="_blank" rel="noopener noreferrer">
+                            <div class="fab fa-linkedin-in"></div>
+                        </a>
+                    </li>
+                    <li class="bio-rrss__item">
+                        <a href="http://www.twitter.com" title="twitter" target="_blank" rel="noopener noreferrer">
+                            <div class="fab fa-twitter"></div>
+                        </a>
+                    </li>
+                    <li class="bio-rrss__item">
+                        <a href="https://www.instagram.com/" title="instagram" target="_blank" rel="noopener noreferrer">
+                            <div class="fab fa-instagram"></div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Trabajo -->
+        <div class="main__career" id="careerId">
+            <h3 class="career__title">Experiencia laboral</h3>
+            <div class="career__container">
+                <div class="career__line career__line--pulse"></div>
+                <div class="career-section__item career-section__item--prodware career-section__image">
+                    <a class="career-section__link" href="https://www.prodwaregroup.com/es-es/" title="prodware" target="_blank" rel="noopener noreferrer">
+                        <img class="career-section__img" src="assets/img/Prodware.jpg" alt="logo de Prodware">
+                    </a>
+                </div>
+                <div class="career-section__item career-section__date--prodware career-section__date">
+                    <span>2015</span>
+                </div>
+                <section class="career-section__item career-section__text--prodware career-section__text">
+                    <h4 class="career-section__text--title">Prodware</h4>
+                    <h5 class="career-section__text--subtitle">Consultora IT</h5>
+                    <p class="career-section__text--description">Desarrollador de aplicaciones en entorno Cloud y On-Premise de Business Central</p>
+                </section>
+                <div class="career-section__item career-section__item--attest career-section__image">
+                    <a class="career-section__link" href="https://www.pkf-attest.es/" title="attest" target="_blank" rel="noopener noreferrer">
+                        <img class="career-section__img" src="assets/img/Attest.png" alt="logo de Attest">
+                    </a>
+                </div>
+                <div class="career-section__item career-section__date--attest career-section__date">
+                    <span>2013-2015</span>
+                </div>
+                <section class="career-section__item career-section__text--attest career-section__text">
+                    <h4 class="career-section__text--title">PKF Attest</h4>
+                    <h5 class="career-section__text--subtitle">Consultora IT</h5>
+                    <p class="career-section__text--description">Desarrollador de soluciones en Microsoft Dynamics NAV</p>
+                </section>
+                <div class="career-section__item career-section__item--tecnocom career-section__image">
+                    <a class="career-section__link" href="https://www.minsait.com/es" title="tecnocom" target="_blank" rel="noopener noreferrer">
+                        <img class="career-section__img" src="assets/img/Tecnocom.jpg" alt="logo de Tecnocom">
+                    </a>
+                </div>
+                <div class="career-section__item career-section__date--tecnocom career-section__date">
+                    <span>2008-2013</span>
+                </div>
+                <section class="career-section__item career-section__text--tecnocom career-section__text">
+                    <h4 class="career-section__text--title">Tecnocom</h4>
+                    <h5 class="career-section__text--subtitle">Consultora IT</h5>
+                    <p class="career-section__text--description">Desarrollador de soluciones en Microsoft Dynamics NAV</p>
+                </section>
+                <div class="career-section__item career-section__item--ibdos career-section__image">
+                    <a class="career-section__link" href="https://revistabyte.es/actualidad-it/euclides-bindar-adquiera-ibdos-por-9-millones-de-euros/" title="ibdos" target="_blank"
+                        rel="noopener noreferrer">
+                        <img class="career-section__img" src="assets/img/IBdos.jpg" alt="logo de IBdos">
+                    </a>
+                </div>
+                <div class="career-section__item career-section__date--ibdos career-section__date">
+                    <span>2004-2008</span>
+                </div>
+                <section class="career-section__item career-section__text--ibdos career-section__text">
+                    <h4 class="career-section__text--title">IBdos</h4>
+                    <h5 class="career-section__text--subtitle">Consultora IT</h5>
+                    <p class="career-section__text--description">Desarrollador de soluciones en Microsoft Dynamics NAV</p>
+                </section>
+            </div>
+        </div>
+
+        <!-- Viajes -->
+        <div class="main__travel" id="travelId">
+            <h3 class="travel__title">Viajes</h3>
+            <div class="travel__container">
+                <div class="travel-section__item travel-section__item--florencia">
+                    <a data-fancybox class="travel-section__link" href="assets/img/Florencia.jpg" title="florencia">
+                        <img class="travel-section__img" src="assets/img/Florencia.jpg" alt="imagen de Florencia">
+                        <h4 class="travel-section__text">Florencia, Italia</h4>
+                    </a>
+                </div>
+                <div class="travel-section__item travel-section__item--venecia">
+                    <a data-fancybox class="travel-section__link" href="assets/img/Venecia.jpg" title="venecia">
+                        <img class="travel-section__img" src="assets/img/Venecia.jpg" alt="imagen de Florencia">
+                        <h4 class="travel-section__text travel-section__text--small">Venecia, Italia</h4>
+                    </a>
+                </div>
+                <div class="travel-section__item travel-section__item--paris">
+                    <a data-fancybox class="travel-section__link" href="assets/img/Paris.jpg" title="paris">
+                        <img class="travel-section__img" src="assets/img/Paris.jpg" alt="imagen de Florencia">
+                        <h4 class="travel-section__text travel-section__text--small">París, Francia</h4>
+                    </a>
+                </div>
+                <div class="travel-section__item travel-section__item--atenas">
+                    <a data-fancybox class="travel-section__link" href="assets/img/Atenas.jpg" title="atenas">
+                        <img class="travel-section__img" src="assets/img/Atenas.jpg" alt="imagen de Florencia">
+                        <h4 class="travel-section__text travel-section__text--small">Atenas, Grecia</h4>
+                    </a>
+                </div>
+                <div class="travel-section__item travel-section__item--londres">
+                    <a data-fancybox class="travel-section__link" href="assets/img/Londres.jpg" title="londres">
+                        <img class="travel-section__img" src="assets/img/Londres.jpg" alt="imagen de Florencia">
+                        <h4 class="travel-section__text travel-section__text--small">Londres, Inglaterra</h4>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contacto -->
+        <div class="main__contact" id="contactId">
+            <h3 class="contact__title">Contacto</h3>
+            <form class="contact__form" action="mailto:javalledor@alumnostrazos.net" method="post" enctype="text/plain">
+                <div class="contact-form contact-form__input">
+                    <label for="firstName" id="firstNameLabel">Nombre</label>
+                    <input type="text" name="first_name" id="firstName" value="" pattern="[A-Za-z]+" required>
+                </div>
+                <div class="contact-form contact-form__input">
+                    <label for="lastName" id="lastNameLabel">Apellidos</label>
+                    <input type="text" name="last_name" id="lastName" value="" pattern="[A-Za-z]+" required>
+                </div>
+                <div class="contact-form contact-form__input">
+                    <label for="email" id="emailLabel">Email</label>
+                    <input type="text" name="email_from" id="email" value="" required>
+                </div>
+                <div class="contact-form contact-form__textarea">
+                    <label for="areaComments" id="areaCommentsLabel">Mensaje</label>
+                    <textarea name="area_comments" id="areaComments" cols="30" rows="4" autofocus></textarea>
+                </div>
+                <div class="contact-form contact-form__submit">
+                    <input type="submit" value="Enviar">
+                </div>
+            </form>
+        </div>
+
+        <!-- Cookies -->
+        <div class="cookies">
+            <p class="cookies__text">Las cookies son ficheros de datos que se generan en el ordenador del usuario y que nos permiten obtener información sobre la fecha y hora de la última vez que el
+                usuario visitó nuestro portal, el país y procedencia seleccionada por el usuario de cara a una futura presentación del sitio web acorde con su procedencia geográfica, y sobre aquellos
+                elementos de seguridad que intervienen en el control de acceso a las áreas restringidas.</p>
+            <button class="cookies__btn">Aceptar</button>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+
+            <!-- email -->
+            <div class="footer__email">
+                <h4 class="footer-email__text--title">E-Mail</h4>
+                <h5 class="footer-email__text--subtitle"><a href="mailto:javalledor@alumnostrazos.net" title="email" rel="nofollow">javalledor@alumnostrazos.net</a></h5>
+            </div>
+
+            <!-- github -->
+            <div class="footer__github">
+                <h4 class="footer-github__text--title">GitHub</h4>
+                <h5 class="footer-github__text--subtitle"><a href="https://github.com/NAVJuanan/Trazos" title="github" target="_blank" rel="noopener noreferrer">https://github.com/NAVJuanan/Trazos</a>
+                </h5>
+            </div>
+
+            <!-- rrss -->
+            <div class="footer__rrss">
+                <ul class="footer-rrss__list">
+                    <li class="footer-rrss__item">
+                        <a href="https://github.com/NAVJuanan/Trazos/tree/main/Ejercicios/Portfolio" title="github" target="_blank" rel="noopener noreferrer">
+                            <div class="fab fa-github-alt"></div>
+                        </a>
+                    </li>
+                    <li class="footer-rrss__item">
+                        <a href="https://www.linkedin.com/in/juan-antonio-mu%C3%B1oz-valledor-7016925a/" title="linkedin" target="_blank" rel="noopener noreferrer">
+                            <div class="fab fa-linkedin-in"></div>
+                        </a>
+                    </li>
+                    <li class="footer-rrss__item">
+                        <a href="http://www.twitter.com" title="twitter" target="_blank" rel="noopener noreferrer">
+                            <div class="fab fa-twitter"></div>
+                        </a>
+                    </li>
+                    <li class="footer-rrss__item">
+                        <a href="https://www.instagram.com/" title="instagram" target="_blank" rel="noopener noreferrer">
+                            <div class="fab fa-instagram"></div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-empty"></div>
+        </div>
+    </footer>
+</body>
+
+</html>

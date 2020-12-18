@@ -1,0 +1,826 @@
+/*** css import ***/
+@import "_reset/reset", "_reset/vars", "_reset/mixins", "_reset/keyframes", "_reset/fonts";
+
+
+/*** css body ***/
+body {
+    background-color: #ffffff;
+    font-family: "Montserrat-Regular", sans-serif;
+}
+
+
+/*** css header ***/
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+
+    & .header__container {
+        animation: opacidad 5s linear;
+        background-color: #ffffff;
+        line-height: 2rem;
+        margin: auto;
+        max-width: 1200px;
+        min-height: 8vh;
+        width: 80%;       
+
+        @include flexible(row, nowrap, space-between, flex-end, initial);
+
+        @media screen and (max-width:620px) {
+            display: none;
+        }
+
+        & .header__title {
+            color: $main-color;
+            width: 20%;
+        }
+
+        /*** Navegación ***/
+        & .header__nav {
+            width: 80%;
+
+            & .header__list {
+                width: 100%;
+
+                @include flexible(row, nowrap, space-evenly, center, initial);
+            
+                & .header__item {
+                    color: $main-color;
+                    font-family: "Montserrat-Bold", sans-serif;
+                    letter-spacing: .1rem;
+                    padding: 0 .2rem;
+                    position: relative;
+                    text-transform: lowercase;
+                    transition: all .4s ease;
+
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+
+                    &::after {
+                        @include text-initial-effect($main-color);
+                    }
+                
+                    &:hover::after {    
+                        @include text-ending-effect();
+                    }
+                }
+            }
+        }
+    }
+
+    /*** Menú móvil ***/
+    & .header__icon {
+        animation: opacidad 4s linear;
+        background-color: #ffffff;
+        color: $main-color;
+        display: none;
+        line-height: 2rem;
+        margin: auto;
+        max-width: 1200px;
+        min-height: 8vh;
+        width: 80%;
+
+        @media screen and (max-width:620px) {
+            @include flexible(row, nowrap, flex-start, center, initial);
+        }
+
+        & .header-icon__bars {
+            cursor: pointer;
+            font-size: 1.5rem;
+            position: relative;
+            width: 60%;
+        }
+
+        & .header-icon__title {
+            font-size: 1.2rem;
+            width: 40%;
+        }
+
+        & .header-icon__nav {
+            display: none;
+        }
+
+        & .header-icon__nav--show {
+            display: flex;
+        }
+
+        & .header-icon__list {
+            left: 0;
+            overflow: hidden;
+            position: absolute;
+            top: 40px;
+            width: 100%;
+
+            @include flexible(column, nowrap, space-between, flex-start, initial);
+        
+            & .header-icon__item {
+                color: $main-color;
+                font-family: "Montserrat-Bold", sans-serif;
+                letter-spacing: .1rem;
+                padding: .4rem 0;
+                position: relative;
+                text-transform: lowercase;
+            }
+        }
+    }
+}
+
+
+/*** css main ***/
+.main {
+    width: 100%;
+
+    /*** Bio ***/
+    & .main__bio {
+        margin: auto;
+        max-width: 1200px;
+        min-height: 10vh;
+        padding-top: 10rem;
+        width: 80%;
+
+        @include flexible(column, nowrap, space-around, flex-start, initial);
+    
+        /*** presentación ***/
+        & .bio__title, .bio__subtitle {
+            animation: escalar 5s linear;
+            color: $secondary-color;
+            font-family: "Montserrat-ExtraBold", sans-serif;
+            font-size: 3rem;
+            line-height: 5rem;
+            text-align: left;
+            width: 100%;
+
+            @media screen and (max-width:930px) {
+                font-size: 2rem;
+            }
+
+            @media screen and (max-width:620px) {
+                font-size: 1.5rem;
+            }
+        }
+
+        /*** rrss ***/
+        & .bio__rrss {
+            animation: opacidad 5s linear;
+            padding: 2.5rem 0;
+            width: 100%;
+            
+            & .bio-rrss__list {
+                width: 20%;
+
+                @include flexible(row, nowrap, space-between, flex-end, initial);
+                
+                @media screen and (max-width:930px) {
+                    width: 30%;
+                }
+    
+                @media screen and (max-width:620px) {
+                    width: 60%;
+                }
+
+                & .bio-rrss__item {
+                    color: $main-color;
+                    font-family: "Montserrat-Bold", sans-serif;
+                    font-size: 2rem;
+                    text-align: left;
+                    transition: all .4s ease;
+
+                    &:hover {
+                        opacity: .7;
+                    }
+                }
+            }
+        }
+    }
+
+    /*** Trabajo ***/
+    & .main__career {
+        animation: opacidad 5s linear;
+        margin: auto;
+        max-width: 1200px;
+        min-height: 10vh;
+        padding: 5rem 0;
+        width: 80%;
+
+        @include flexible(column, nowrap, space-around, flex-start, initial);
+    
+        /*** título ***/
+        & .career__title {
+            color: $secondary-color;
+            font-family: "Montserrat-ExtraBold", sans-serif;
+            font-size: 3rem;
+            line-height: 5rem;
+            padding: 2.5rem 0;
+            text-align: left;
+            width: 100%;
+
+            @media screen and (max-width:930px) {
+                font-size: 2rem;
+            }
+
+            @media screen and (max-width:620px) {
+                font-size: 1.5rem;
+            }
+        }
+
+        /*** empresas ***/
+        & .career__container {
+            display: grid;
+            gap: 0;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            position: relative;
+            width: 100%;
+
+            @media screen and (max-width:930px) {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(8, 1fr);
+            }
+
+            // línea laboral
+            & .career__line {         
+                background-color: $main-color;
+                height: 120vh;
+                left: 50%;
+                position: absolute;
+                top: 5%;
+                width: 1px;
+
+                &::before {
+                    @include line-initial-circle($main-color);
+                }
+
+                &::after {
+                    @include line-ending-circle($main-color);
+                }
+
+                @media screen and (max-width:930px) {
+                    display: none;
+                }
+            }
+
+            & .career__line--pulse {
+                background: $main-color;
+                box-shadow: 0 0 0 rgba(33,166,174, 0.4);
+                animation: pulso 2s infinite;
+            }
+
+            & .career-section__link {
+                padding: 1rem 2rem;
+                transition: all .4s ease;
+
+                // reducimos la imagen
+                &:hover {
+                    transform: scale(.9);
+                }  
+            }
+
+            & .career-section__date {
+                color: $auxiliary-color;
+                font-family: "Montserrat-Regular", sans-serif;
+                font-size: .8rem;
+                opacity: .6;
+                padding: 1.3rem 1rem 0;
+                text-align: right;
+                
+                @media screen and (max-width:930px) {
+                    border-bottom: 1px solid $auxiliary-color;
+                }
+            }
+
+            & .career-section__text {
+                padding-right: 2.5rem;
+                text-align: left;
+
+                @media screen and (max-width:930px) {
+                    border-bottom: 1px solid $auxiliary-color;
+                }
+
+                & .career-section__text--title {
+                    color: $secondary-color;
+                    font-family: "Montserrat-Bold", sans-serif;
+                    font-size: 1.2rem;
+                }
+    
+                & .career-section__text--subtitle {
+                    color: $auxiliary-color;
+                    font-family: "Montserrat-Regular", sans-serif;
+                    font-size: .8rem;
+                    opacity: .6;
+                }
+    
+                & .career-section__text--description {
+                    color: $auxiliary-color;
+                    font-family: "Montserrat-Regular", sans-serif;
+                    font-size: .9rem;
+                }
+            }
+
+            // posicionamiento grid de cada elemento
+            & .career-section__item--prodware {
+                grid-column: 3 / 5;
+                grid-row: 1 / 2;
+
+                @media screen and (max-width:930px) {
+                    grid-column: 1 / 3;
+                    grid-row: 1 / 2;
+                }
+            }
+
+            & .career-section__date--prodware {
+                grid-column: 3 / 4;
+                grid-row: 2 / 3;
+
+                @media screen and (max-width:930px) {
+                    grid-column: 1 / 2;
+                    grid-row: 2 / 3;
+                }
+            }
+
+            & .career-section__text--prodware {
+                grid-column: 4 / 5;
+                grid-row: 2 / 3;
+
+                @media screen and (max-width:930px) {
+                    grid-column: 2 / 3;
+                    grid-row: 2 / 3;
+                }
+            }
+
+            & .career-section__item--attest {
+                grid-column: 1 / 3;
+                grid-row: 2 / 3;
+
+                @media screen and (max-width:930px) {
+                    grid-column: 1 / 3;
+                    grid-row: 3 / 4;
+                }
+            }
+
+            & .career-section__date--attest {
+                grid-column: 1 / 2;
+                grid-row: 3 / 4;
+
+                @media screen and (max-width:930px) {
+                    grid-column: 1 / 2;
+                    grid-row: 4 / 5;
+                }
+            }
+
+            & .career-section__text--attest {
+                grid-column: 2 / 3;
+                grid-row: 3 / 4;
+
+                @media screen and (max-width:930px) {
+                    grid-column: 2 / 3;
+                    grid-row: 4 / 5;
+                }
+            }
+
+            & .career-section__item--tecnocom {
+                grid-column: 3 / 5;
+                grid-row: 3 / 4;
+
+                @media screen and (max-width:930px) {
+                    grid-column: 1 / 3;
+                    grid-row: 5 / 6;
+                }
+            }
+
+            & .career-section__date--tecnocom {
+                grid-column: 3 / 4;
+                grid-row: 4 / 5;
+
+                @media screen and (max-width:930px) {
+                    grid-column: 1 / 2;
+                    grid-row: 6 / 7;
+                }
+            }
+
+            & .career-section__text--tecnocom {
+                grid-column: 4 / 5;
+                grid-row: 4 / 5;
+
+                @media screen and (max-width:930px) {
+                    grid-column: 2 / 3;
+                    grid-row: 6 / 7;
+                }
+            }
+
+            & .career-section__item--ibdos {
+                grid-column: 1 / 3;
+                grid-row: 4 / 5;
+
+                @media screen and (max-width:930px) {
+                    grid-column: 1 / 3;
+                    grid-row: 7 / 8;
+                }
+            }
+
+            & .career-section__date--ibdos {
+                grid-column: 1 / 2;
+                grid-row: 5 / 6;
+
+                @media screen and (max-width:930px) {
+                    grid-column: 1 / 2;
+                    grid-row: 8 / 9;
+                }
+            }
+
+            & .career-section__text--ibdos {
+                grid-column: 2 / 3;
+                grid-row: 5 / 6;
+
+                @media screen and (max-width:930px) {
+                    grid-column: 2 / 3;
+                    grid-row: 8 / 9;
+                }
+            }
+        }
+    }
+
+    /*** Viaje ***/
+    & .main__travel {
+        animation: opacidad 5s linear;
+        margin: auto;
+        max-width: 1200px;
+        min-height: 25vh;
+        width: 80%;
+
+        @include flexible(column, nowrap, space-around, flex-start, initial);
+    
+        /*** título ***/
+        & .travel__title {
+            color: $secondary-color;
+            font-family: "Montserrat-ExtraBold", sans-serif;
+            font-size: 3rem;
+            line-height: 5rem;
+            padding: 2.5rem 0;
+            text-align: left;
+            width: 100%;
+
+            @media screen and (max-width:930px) {
+                font-size: 2rem;
+            }
+
+            @media screen and (max-width:620px) {
+                font-size: 1.5rem;
+            }
+        }
+
+        /*** lugares ***/
+        & .travel__container {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+
+            @media screen and (max-width:930px) {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(4, 1fr);
+            }
+
+            & .travel-section__item {
+                position: relative;
+
+                &:hover {
+
+                    // bajamos opacidad a la imagen para ver el texto
+                    .travel-section__img {
+                        opacity: .2;
+                    }
+
+                    // subimos opacidad al texto para verlo y lo movemos
+                    .travel-section__text {
+                        opacity: .9;
+                        transform: translateX(30%);
+                    }
+
+                    // diferente movimiento en imágenes pequeñas
+                    .travel-section__text--small {
+                        transform: translateX(20%);
+                    }
+                }
+            }
+
+            // posicionamiento grid de cada elemento
+            & .travel-section__item--florencia {
+                grid-column: 1 / 3;
+                grid-row: 1 / 3;
+            }
+
+            & .travel-section__item--venecia {
+                grid-column: 3 / 4;
+                grid-row: 1 / 2;
+
+                @media screen and (max-width:930px) {
+                    grid-column: 1 / 2;
+                    grid-row: 3 / 4;
+                }
+            }
+
+            & .travel-section__item--paris {
+                grid-column: 4 / 5;
+                grid-row: 1 / 2;
+
+                @media screen and (max-width:930px) {
+                    grid-column: 2 / 3;
+                    grid-row: 3 / 4;
+                }
+            }
+
+            & .travel-section__item--atenas {
+                grid-column: 3 / 4;
+                grid-row: 2 / 3;
+
+                @media screen and (max-width:930px) {
+                    grid-column: 1 / 2;
+                    grid-row: 4 / 5;
+                }
+            }
+
+            & .travel-section__item--londres {
+                grid-column: 4 / 5;
+                grid-row: 2 / 3;
+
+                @media screen and (max-width:930px) {
+                    grid-column: 2 / 3;
+                    grid-row: 4 / 5;
+                }
+            }
+
+            & .travel-section__img {
+                transform: scale(1) rotate(0deg) translateY(0%); 
+                transition: all .4s ease;  
+            }
+
+            & .travel-section__text {
+                color: $main-color;
+                font-size: 2rem;
+                height: 100%;
+                left: 0;
+                opacity: 0;
+                position: absolute;
+                top: 20%;
+                transform: scale(1) rotate(0deg) translateY(0%);
+                transition: opacity .4s ease;
+                transition: transform 1.5s ease;
+                width: 100%;
+            }
+
+            & .travel-section__text--small {
+                font-size: 1.2rem;
+            }
+        }            
+    }
+
+    /*** Contacto ***/
+    & .main__contact {
+        animation: opacidad 5s linear;
+        border-bottom: 1px solid $main-color;
+        margin: auto;
+        max-width: 1200px;
+        min-height: 25vh;
+        padding: 5rem 0;
+        width: 80%;
+
+        @include flexible(column, nowrap, space-around, flex-start, initial);
+    
+        /*** título ***/
+        & .contact__title {
+            color: $secondary-color;
+            font-family: "Montserrat-ExtraBold", sans-serif;
+            font-size: 3rem;
+            line-height: 5rem;
+            padding: 2.5rem 0;
+            text-align: left;
+            width: 100%;
+
+            @media screen and (max-width:930px) {
+                font-size: 2rem;
+            }
+
+            @media screen and (max-width:620px) {
+                font-size: 1.5rem;
+            }
+        }
+
+        /*** formulario ***/
+        & .contact__form {
+            color: $main-color;
+            font-family: "Montserrat-Bold", sans-serif;
+            font-size: 1rem;
+            width: 100%;
+
+            @include flexible(column, nowrap, space-between, flex-start, initial);
+        
+            & .contact-form__input {
+                padding: 0 0 1rem 1rem;
+                width: 80%;
+    
+                & > label {
+                    transition: all .4s ease;
+                }
+                
+                // efecto al hacer foco
+                & .label--focus {
+                    font-size: .8rem;
+                }
+    
+                & [type=text] {
+                    background-color: #e6ecec;
+                    border-bottom: 1px solid $main-color;
+                    color: $main-color;
+                    font-family: "Montserrat-Regular", sans-serif;
+                    padding: 1rem .5rem .1rem;
+                    width: 50%;
+
+                    @media screen and (max-width:930px) {
+                        width: 100%;
+                    }
+                }
+            }
+    
+            & .contact-form__textarea {
+                padding: 0 0 1rem 1rem;
+                width: 80%;
+    
+                & > label {
+                    transition: all .4s ease;
+                }
+
+                // efecto al hacer foco
+                & .label--focus {
+                    font-size: .8rem;
+                }
+                
+                & textarea {
+                    background-color: #e6ecec;
+                    border-bottom: 1px solid $main-color;
+                    color: $main-color;
+                    font-family: "Montserrat-Regular", sans-serif;
+                    padding: 1rem .5rem .1rem;
+                    width: 50%;
+
+                    @media screen and (max-width:930px) {
+                        width: 100%;
+                    }
+                }
+            }
+
+            & .contact-form__submit {
+                width: 40%;     
+    
+                & [type=submit] {
+                    background-color: #e6ecec;
+                    border: 1px solid $main-color;
+                    border-radius: 10px;
+                    color: $main-color;
+                    cursor: pointer;
+                    font-family: "Montserrat-Bold", sans-serif;
+                    margin-left: 1rem;
+                    padding: 1rem 3rem;
+                    transition: all .4s ease;  
+                    
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*** cookies ***/
+.cookies { 
+    background-color: $main-color;
+    color: #ffffff;
+    left: 0;
+    padding: 2rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+
+    & .cookies__text {
+        font-family: "Montserrat-Regular", sans-serif;
+        text-align: justify;
+    }
+
+    & .cookies__btn {
+        border-radius: 20px;
+        cursor: pointer;
+        margin-top: 1rem;
+        padding: 1rem 2rem;
+    }
+
+}
+
+.cookies-hide {
+    display: none;
+}
+
+
+/*** css footer ***/
+.footer {
+    width: 100%;
+
+    & .footer__container {
+        animation: opacidad 5s linear;
+        line-height: 2rem;
+        margin: auto;
+        max-width: 1200px;
+        min-height: 8vh;
+        padding: 2.55rem 0;
+        width: 80%;
+        
+        @include flexible(row, nowrap, space-between, center, initial);
+
+        @media screen and (max-width:930px) {
+            @include flexible(column, nowrap, center, flex-start, initial);
+        }
+
+        /*** e-mail ***/
+        & .footer__email {
+            padding-right: 2.5rem;
+            text-align: left;
+
+            & .footer-email__text--title {
+                color: $auxiliary-color;
+                font-family: "Montserrat-Regular", sans-serif;
+                font-size: .8rem;
+                opacity: .6;
+            }
+
+            & .footer-email__text--subtitle {
+                color: $secondary-color;
+                font-family: "Montserrat-Bold", sans-serif;
+                font-size: 1rem;
+
+                &:hover {
+                    color: $main-color;
+                }
+            }
+        }
+
+        /*** github ***/
+        & .footer__github {
+            padding-right: 2.5rem;
+            text-align: left;
+
+            & .footer-github__text--title {
+                color: $auxiliary-color;
+                font-family: "Montserrat-Regular", sans-serif;
+                font-size: .8rem;
+                opacity: .6;
+            }
+
+            & .footer-github__text--subtitle {
+                color: $secondary-color;
+                font-family: "Montserrat-Bold", sans-serif;
+                font-size: 1rem;
+
+                &:hover {
+                    color: $main-color;
+                }
+            }
+        }
+
+        /*** rrss ***/
+        & .footer__rrss {
+            padding: 2.5rem 0;
+            width: 100%;
+            
+            & .footer-rrss__list {
+                width: 100%;
+
+                @include flexible(row, nowrap, flex-end, center, initial);
+
+                @media screen and (max-width:930px) {
+                    @include flexible(row, nowrap, flex-start, center, initial);
+                }
+
+                & .footer-rrss__item {
+                    color: $main-color;
+                    font-family: "Montserrat-Bold", sans-serif;
+                    font-size: 2rem;
+                    padding-left: 1rem;
+                    text-align: right;
+                    transition: all .4s ease;
+
+                    &:hover {
+                        opacity: .7;
+                    }
+
+                    @media screen and (max-width:930px) {
+                        padding-left: 0;
+                        padding-right: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
